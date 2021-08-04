@@ -1,0 +1,73 @@
+class Vehicle:
+    # Constructor
+    def __init__(self, make, model, color, fuelType, options):
+        self.make = make
+        self.model = model
+        self.color = color
+        self.fuelType = fuelType
+        self.options = options
+
+    
+    def getMake(self):
+        return self.make
+
+    def getModel(self):
+        return self.model
+
+    def getColor(self):
+        return self.color
+
+    def getFuelType(self):
+        return self.fuelType
+
+    def getOptions(self):
+        return self.options
+    
+    def __str__(self):
+      return f"Make: {self.make}, Model: {self.model}, FuelType:{self.fuelType}, Options: (self.option)"
+
+    
+class Car(Vehicle):
+
+    
+    def __init__(self, make, model, color, fuelType, options, engineSize, numDoors):
+        super().__init__(make, model, color, fuelType, options)  
+        self.engineSize = engineSize
+        self.numDoors = numDoors
+
+    def getEngineSize():
+      return self.engineSize
+    def getNumDoors():
+      return self.numDoors
+
+    def __str__(self):
+      return "Car: ==>" + super (Car,self).__str__() + "Engine Size" + str(self.engineSize) + ", NumDoors;" + str(self.numDoors)
+
+class Pickup (Vehicle):
+    def __init__ (self, cabStyle,bedLength, make, model, color, fuelType, options):
+      super().__init__ (self, make, model, color, fuelType, options)
+      self.cabStyle = cabStyle
+      self.bedLength= bedLength 
+
+    def cabStyle():
+      return self.cabStyle
+    def bedLength():
+      return self.bedLength
+    
+    def __str__(self):
+      return "Car: ==>" + super(Pickup, self).__str__() + "Cab Style" + str(self.cabStyle) + ", bedLength" + str(self.bedLength)
+
+if __name__ == '__main__':
+  garage = []
+  
+car1= Car("Telsa"",Model 3"",Eletric"",Size1,4")
+car2=Car ("Nissan"",Versa"",Blue""s2","5")
+car3=Car("Kia"",Forte"",Grey"",Gas"",s2""4")
+
+pickup1=Pickup("2door"",8ft"",Chevy""Silverado""Blue""Disel")
+pickup2=Pickup("4door","10ft","Dodge""2500","Black","Gas")
+
+garage= [car2, pickup1]
+
+for vehicle in garage:
+  print(vehicle)
